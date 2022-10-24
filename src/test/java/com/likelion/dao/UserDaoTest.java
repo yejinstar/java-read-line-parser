@@ -42,9 +42,9 @@ class UserDaoTest {
     void addAndGet() throws SQLException, ClassNotFoundException {
         //UserDao userDao = new UserDao();
         UserDao userDao = context.getBean("localUserDao",UserDao.class);
-//
-//        userDao.deleteAll();
-//        assertEquals(0,userDao.getCount());
+
+        userDao.deleteAll();
+        assertEquals(0,userDao.getCount());
 
         User user = new User("1","Guni","password");
         userDao.add(user);
