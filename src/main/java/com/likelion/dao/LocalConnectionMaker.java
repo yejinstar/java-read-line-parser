@@ -7,8 +7,8 @@ import java.util.Map;
 
 public class LocalConnectionMaker implements ConnectionMaker{
     @Override
-    public Connection makeConnection() throws SQLException, ClassNotFoundException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
+    public Connection makeConnection() throws SQLException {
+//        Class.forName("com.mysql.cj.jdbc.Driver");
         Map<String, String> env = System.getenv();
         Connection c = DriverManager.getConnection(
                 env.get("DB_HOST"),env.get("DB_USER"),env.get("DB_PASSWORD"));
